@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0f5c46"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Route 9 Card"><link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="icon-180.png"><link rel="manifest" href="manifest.webmanifest"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px/1.4 system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>Route 9 Card Finder</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#1d4ed8"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Route 9 Card"><link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="icon-180.png"><link rel="manifest" href="manifest.webmanifest"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px/1.4 system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>Route 9 Card Finder</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <script>
   // mobile layout is the default; the choice is remembered per device
@@ -16,22 +16,22 @@
 /* Layout: two modes on one page. html.m = phone app (sticky search + filter pills on top, bottom tab bar, full-bleed map).
    html.d = desktop (tabs in header, two-column card grid). Highway-sign vernacular: Overpass is a Highway Gothic revival. */
 :root {
-  --bg: #f3f5f4;
+  --bg: #f3f6fd;
   --surface: #ffffff;
-  --ink: #17221f;
-  --muted: #5b6a65;
-  --line: #d9e0dd;
-  --sign: #0f5c46;        /* highway-sign green */
+  --ink: #0f1d3a;
+  --muted: #55627d;
+  --line: #d5ddef;
+  --sign: #1d4ed8;        /* Marlboro royal blue */
   --sign-ink: #ffffff;
-  --sign-soft: #e2efe9;
-  --deal: #f2b630;        /* caution amber for discounts */
-  --deal-ink: #2b2104;
-  --star: #d98a00;
-  --danger: #b3261e;
-  --map-land: #eef1ee;
-  --map-town: #c9d3cf;
-  --map-road: #a9b4b0;
-  --me: #2a7fff;
+  --sign-soft: #e3ebff;
+  --deal: #ffcd00;        /* Marlboro gold, for discounts and accents */
+  --deal-ink: #1f1a00;
+  --star: #e8a900;
+  --danger: #c0262d;
+  --map-land: #f0f4fc;
+  --map-town: #c5d1ec;
+  --map-road: #a6b3cf;
+  --me: #e11d48;
   --display: "Overpass", "Segoe UI", system-ui, sans-serif;
   --body: "Overpass", "Segoe UI", system-ui, sans-serif;
   --mono: "Overpass Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
@@ -40,17 +40,17 @@
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #0f1513; --surface: #17201d; --ink: #e6ece9; --muted: #98a8a2; --line: #2a3632;
-    --sign: #2f9a76; --sign-ink: #04140e; --sign-soft: #1b322a;
-    --deal: #f2b630; --deal-ink: #2b2104; --star: #f5b43a; --danger: #f2827a;
-    --map-land: #141c19; --map-town: #2c3a35; --map-road: #4a5a54; --me: #5aa0ff; color-scheme: dark;
+    --bg: #0a1330; --surface: #121f4a; --ink: #eef2ff; --muted: #a3b2d9; --line: #263769;
+    --sign: #2f63f0; --sign-ink: #ffffff; --sign-soft: #1b2d68;
+    --deal: #ffcd00; --deal-ink: #1f1a00; --star: #ffcd00; --danger: #ff8a8f;
+    --map-land: #0d1838; --map-town: #2a3b72; --map-road: #46578e; --me: #fb7185; color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #0f1513; --surface: #17201d; --ink: #e6ece9; --muted: #98a8a2; --line: #2a3632;
-  --sign: #2f9a76; --sign-ink: #04140e; --sign-soft: #1b322a;
-  --deal: #f2b630; --deal-ink: #2b2104; --star: #f5b43a; --danger: #f2827a;
-  --map-land: #141c19; --map-town: #2c3a35; --map-road: #4a5a54; --me: #5aa0ff; color-scheme: dark;
+  --bg: #0a1330; --surface: #121f4a; --ink: #eef2ff; --muted: #a3b2d9; --line: #263769;
+  --sign: #2f63f0; --sign-ink: #ffffff; --sign-soft: #1b2d68;
+  --deal: #ffcd00; --deal-ink: #1f1a00; --star: #ffcd00; --danger: #ff8a8f;
+  --map-land: #0d1838; --map-town: #2a3b72; --map-road: #46578e; --me: #fb7185; color-scheme: dark;
 }
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.45; -webkit-text-size-adjust: 100%; }
@@ -63,7 +63,7 @@ a { color: var(--sign); }
 .inner { max-width: 1120px; margin: 0 auto; }
 
 /* ---------- header ---------- */
-header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 1000; background: var(--sign); color: var(--sign-ink); }
+header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 1000; background: var(--sign); color: var(--sign-ink); border-bottom: 4px solid var(--deal); }
 .bar { display: flex; align-items: center; gap: 10px; padding-block: 10px; min-width: 0; }
 .shield { flex: none; width: 30px; height: 32px; }
 .brand { min-width: 0; }
@@ -144,7 +144,7 @@ details.more ul { margin: 8px 0 0; padding-left: 18px; font-size: 14.5px; displa
 .pin .lbl { display: none; position: absolute; left: 36px; top: 50%; transform: translateY(-50%); background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: 7px; padding: 3px 8px; font-size: 12.5px; font-weight: 700; white-space: nowrap; box-shadow: 0 1px 3px rgba(0,0,0,.18); max-width: 190px; overflow: hidden; text-overflow: ellipsis; }
 .pin .lbl i { font-style: normal; color: var(--sign); font-family: var(--mono); margin-left: 5px; }
 .show-labels .pin .lbl { display: block; }
-.pin.sel .dot { width: 32px; height: 32px; margin: -16px 0 0 -16px; background: var(--deal); }
+.pin.sel .dot { width: 32px; height: 32px; margin: -16px 0 0 -16px; background: var(--deal); border-color: var(--ink); }
 .pin.sel .lbl { display: block; }
 .cluster { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--sign); color: var(--sign-ink); font-family: var(--mono); font-weight: 700; font-size: 14px; border: 3px solid var(--surface); box-shadow: 0 1px 5px rgba(0,0,0,.3); }
 .cluster.big { width: 52px; height: 52px; font-size: 15px; }
@@ -180,6 +180,15 @@ html.d .sheet::before { display: none; }
 .sheet .msg.err { color: var(--danger); }
 .sheet .fine { font-size: 13.5px; color: var(--muted); }
 .sheet .end { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.sheet .btn.on { background: var(--sign); border-color: var(--sign); color: var(--sign-ink); }
+.catgrp { border: 1px solid var(--line); border-radius: 14px; padding: 10px 12px 12px; display: grid; gap: 6px; }
+.cg-head { display: flex; align-items: center; gap: 12px; }
+.cg-head b { flex: 1; font-family: var(--display); font-size: 16px; }
+.checks { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 2px 10px; }
+.sheet label.check { display: flex; align-items: center; gap: 10px; min-height: 44px; text-transform: none; letter-spacing: 0; font-size: 15px; font-weight: 600; color: var(--ink); cursor: pointer; }
+.check input { width: 22px; height: 22px; flex: none; accent-color: var(--sign); margin: 0; padding: 0; }
+.check .n { color: var(--muted); font-family: var(--mono); font-size: 12px; margin-left: auto; }
+.check:has(input:not(:checked)) span:first-of-type { color: var(--muted); text-decoration: line-through; }
 .toast { position: fixed; left: 50%; bottom: calc(var(--toast-b, 18px) + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--ink); color: var(--bg); padding: 11px 16px; border-radius: 12px; font-weight: 700; z-index: 3000; font-size: 14.5px; max-width: calc(100% - 32px); }
 
 /* ---------- mobile mode ---------- */
@@ -221,7 +230,7 @@ html.d .peek { left: 30px; bottom: 38px; }
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="7"/></svg>
         <span id="locLabel">Set location</span>
       </button>
-      <button class="icon-btn" id="layoutBtn" type="button" aria-label="Switch layout"></button>
+      <button class="icon-btn" id="settingsBtn" type="button" aria-label="Settings" title="Settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button>
     </div>
     <div id="filters">
       <div class="search">
@@ -318,8 +327,10 @@ html.d .peek { left: 30px; bottom: 38px; }
     q: '', type: '', town: '', cat: '', sort: 'near', radius: 0,
     me: null,            // {lat, lng, label, source, at}
     favs: new Set(), visits: [],
+    hidden: new Set(),   // categories the user chose to hide
     shown: 40,
   };
+  const catOf = s => s.category || 'Other';
 
   // ---------- persistence: Claude db (private per-user) when available, plus a localStorage copy ----------
   const LS = {
@@ -332,6 +343,7 @@ html.d .peek { left: 30px; bottom: 38px; }
     S.favs = new Set(LS.get('favs', []));
     S.visits = LS.get('visits', []);
     S.me = LS.get('me', null);
+    S.hidden = new Set(LS.get('hidden', []));
     const f = LS.get('filters', null);
     if (f) Object.assign(S, { type: f.type || '', town: f.town || '', cat: f.cat || '', sort: f.sort || 'near', radius: f.radius || 0 });
   }
@@ -347,8 +359,13 @@ html.d .peek { left: 30px; bottom: 38px; }
       const [favSnap, prefSnap, vSnap] = await Promise.all([col.doc('favorites').get(), col.doc('prefs').get(), visitCol.get()]);
       if (favSnap.exists) S.favs = new Set(favSnap.data().ids || []);
       else if (S.favs.size) col.doc('favorites').set({ ids: [...S.favs] }).catch(() => {});
-      if (prefSnap.exists && prefSnap.data().me) S.me = prefSnap.data().me;
-      else if (S.me) col.doc('prefs').set({ me: S.me }).catch(() => {});
+      const prefs = prefSnap.exists ? prefSnap.data() : null;
+      if (prefs) {
+        if (prefs.me) S.me = prefs.me;
+        if (Array.isArray(prefs.hidden)) S.hidden = new Set(prefs.hidden);
+      } else if (S.me || S.hidden.size) savePrefs();
+      LS.set('hidden', [...S.hidden]);
+      catKey = null; renderTypeOptions();
       const remote = vSnap.docs.map(d => ({ ...d.data(), id: d.id }));
       const ids = new Set(remote.map(v => v.id));
       for (const v of S.visits) if (!ids.has(v.id)) { visitCol.doc(v.id).set(stripId(v)).catch(() => {}); remote.push(v); }
@@ -364,10 +381,12 @@ html.d .peek { left: 30px; bottom: 38px; }
     LS.set('favs', [...S.favs]);
     col?.doc('favorites').set({ ids: [...S.favs] }).catch(() => toast('Could not sync favorites. Saved on this device.'));
   }
-  function saveMe() {
+  function savePrefs() {
     LS.set('me', S.me);
-    col?.doc('prefs').set({ me: S.me }).catch(() => {});
+    LS.set('hidden', [...S.hidden]);
+    col?.doc('prefs').set({ me: S.me, hidden: [...S.hidden] }).catch(() => {});
   }
+  const saveMe = savePrefs;
   function saveFilters() { LS.set('filters', { type: S.type, town: S.town, cat: S.cat, sort: S.sort, radius: S.radius }); }
 
   // ---------- geo ----------
@@ -441,6 +460,7 @@ html.d .peek { left: 30px; bottom: 38px; }
     const out = [];
     for (const s of S.stores) {
       if (onlyFavs && !S.favs.has(s.id)) continue;
+      if (S.hidden.has(catOf(s))) continue;
       if (S.type && typeOf(s) !== S.type) continue;
       if (S.town && !storeTowns(s).has(S.town)) continue;
       if (S.cat && s.category !== S.cat) continue;
@@ -506,7 +526,8 @@ html.d .peek { left: 30px; bottom: 38px; }
     const parts = [];
     if (S.radius && S.me) parts.push(`within ${S.radius} mi`);
     if (S.town) parts.push('in ' + title(S.town));
-    $('#summary').innerHTML = `<span><b>${rows.length}</b> of ${total} ${onlyFavs ? 'favorites' : 'stores'}${parts.length ? ' ' + parts.join(' ') : ''}</span>${!S.me ? '<button class="linkish" data-act="setloc">Set location for distances</button>' : ''}`;
+    const hid = S.hidden.size ? ` · <button class="linkish" data-act="settings">${S.hidden.size} ${S.hidden.size === 1 ? 'category' : 'categories'} hidden</button>` : '';
+    $('#summary').innerHTML = `<span><b>${rows.length}</b> of ${total} ${onlyFavs ? 'favorites' : 'stores'}${parts.length ? ' ' + parts.join(' ') : ''}${hid}</span>${!S.me ? '<button class="linkish" data-act="setloc">Set location for distances</button>' : ''}`;
     const list = $('#list');
     if (!rows.length) {
       list.innerHTML = onlyFavs && !S.favs.size
@@ -533,12 +554,22 @@ html.d .peek { left: 30px; bottom: 38px; }
     }).join('') : `<div class="empty"><b>No visits logged</b>Use “Log visit” on a store to record the date, GPS spot and what you saved.</div>`;
   }
 
-  // category dropdown lists only the categories of the chosen type
+  // type dropdown counts only stores in categories the user hasn't hidden
+  function renderTypeOptions() {
+    const counts = {};
+    S.stores.forEach(s => { if (!S.hidden.has(catOf(s))) counts[typeOf(s)] = (counts[typeOf(s)] || 0) + 1; });
+    if (S.type && !counts[S.type]) S.type = '';
+    $('#type').innerHTML = '<option value="">All types</option>' +
+      TYPES.map(([t]) => t).filter(t => counts[t]).map(t => `<option value="${esc(t)}">${esc(t)} (${counts[t]})</option>`).join('');
+  }
+
+  // category dropdown lists only the visible categories of the chosen type
   let catKey = null;
   function renderCatOptions() {
-    if (catKey === S.type) return;
-    catKey = S.type;
-    const cats = [...new Set(S.stores.filter(s => !S.type || typeOf(s) === S.type).map(s => s.category || 'Other'))].sort();
+    const key = S.type + '|' + [...S.hidden].sort().join(',');
+    if (catKey === key) return;
+    catKey = key;
+    const cats = [...new Set(S.stores.filter(s => (!S.type || typeOf(s) === S.type) && !S.hidden.has(catOf(s))).map(catOf))].sort();
     if (S.cat && !cats.includes(S.cat)) S.cat = '';
     $('#cat').innerHTML = `<option value="">${S.type ? 'All ' + esc(S.type) : 'All categories'}</option>` +
       cats.map(c => `<option value="${esc(c)}">${esc(c)}</option>`).join('');
@@ -559,9 +590,6 @@ html.d .peek { left: 30px; bottom: 38px; }
     });
     $('#clearBtn').hidden = !(S.q || S.type || S.town || S.cat || S.radius);
     $('#clearQ').hidden = !S.q;
-    const lb = $('#layoutBtn'), label = isMobile() ? 'Switch to desktop layout' : 'Switch to mobile layout';
-    lb.innerHTML = isMobile() ? ICON.desktop : ICON.phone;
-    lb.setAttribute('aria-label', label); lb.title = label;
     $('#foot').innerHTML = `<div>${S.stores.length} stores · list as of ${esc(S.meta.listAsOf || '?')} · refreshed ${esc(S.meta.updated || '?')} · ${esc(syncNote)}. Discounts listed as TBD are left out.</div>
       <button class="btn" data-act="layout">${isMobile() ? ICON.desktop + 'Desktop layout' : ICON.phone + 'Mobile layout'}</button>`;
   }
@@ -791,6 +819,38 @@ html.d .peek { left: 30px; bottom: 38px; }
     });
   }
 
+  function openSettings() {
+    const all = {};
+    S.stores.forEach(s => { all[catOf(s)] = (all[catOf(s)] || 0) + 1; });
+    const groups = TYPES.map(([t]) => [t, Object.keys(all).filter(c => typeOf({ category: c }) === t).sort()]).filter(([, cs]) => cs.length);
+    const check = c => `<label class="check"><input type="checkbox" data-cat="${esc(c)}"${S.hidden.has(c) ? '' : ' checked'}><span>${esc(c)}</span><span class="n">${all[c]}</span></label>`;
+    sheet(`<h2>Settings</h2>
+      <div class="grp"><label>Layout</label>
+        <div class="row2"><button class="btn${isMobile() ? ' on' : ''}" data-layout="m" type="button">${ICON.phone}Mobile</button><button class="btn${isMobile() ? '' : ' on'}" data-layout="d" type="button">${ICON.desktop}Desktop</button></div></div>
+      <div class="grp"><label>Categories to show</label>
+        <div class="fine">Untick a category to hide it from the list, the map and the filters.</div>
+        ${groups.map(([t, cs]) => `<div class="catgrp" data-type="${esc(t)}"><div class="cg-head"><b>${esc(t)}</b>
+          <button class="linkish" data-group="show" type="button">Show all</button><button class="linkish" data-group="hide" type="button">Hide all</button></div>
+          <div class="checks">${cs.map(check).join('')}</div></div>`).join('')}
+      </div>
+      <div class="end"><button class="btn" id="showEverything" type="button">Show everything</button><button class="btn primary" data-close type="button">Done</button></div>`,
+    (el) => {
+      const apply = () => {
+        S.hidden = new Set([...el.querySelectorAll('input[data-cat]')].filter(i => !i.checked).map(i => i.dataset.cat));
+        if (S.cat && S.hidden.has(S.cat)) S.cat = '';
+        savePrefs(); saveFilters(); renderTypeOptions(); needFit = true; S.shown = 40; renderAll();
+      };
+      el.addEventListener('change', e => { if (e.target.matches('input[data-cat]')) apply(); });
+      el.addEventListener('click', e => {
+        const g = e.target.closest('[data-group]');
+        if (g) { g.closest('.catgrp').querySelectorAll('input[data-cat]').forEach(i => { i.checked = g.dataset.group === 'show'; }); apply(); }
+        const l = e.target.closest('[data-layout]');
+        if (l) { setLayout(l.dataset.layout); el.querySelectorAll('[data-layout]').forEach(b => b.classList.toggle('on', b === l)); }
+        if (e.target.id === 'showEverything') { el.querySelectorAll('input[data-cat]').forEach(i => { i.checked = true; }); apply(); }
+      });
+    });
+  }
+
   let toastT;
   function toast(t) {
     clearTimeout(toastT);
@@ -814,7 +874,7 @@ html.d .peek { left: 30px; bottom: 38px; }
   }
   $$('[role="tab"]').forEach(b => b.onclick = () => setView(b.dataset.view));
   $('#locBtn').onclick = openLocation;
-  $('#layoutBtn').onclick = () => setLayout(isMobile() ? 'd' : 'm');
+  $('#settingsBtn').onclick = openSettings;
   let qT;
   $('#q').oninput = e => { clearTimeout(qT); qT = setTimeout(() => { S.q = e.target.value; S.shown = 40; needFit = true; renderAll(); }, 150); };
   $('#q').onkeydown = e => { if (e.key === 'Enter') e.target.blur(); };
@@ -835,6 +895,7 @@ html.d .peek { left: 30px; bottom: 38px; }
     const act = e.target.closest('[data-act]'); if (!act) return;
     const a = act.dataset.act;
     if (a === 'setloc') return openLocation();
+    if (a === 'settings') return openSettings();
     if (a === 'layout') return setLayout(isMobile() ? 'd' : 'm');
     if (a === 'closepeek') return closePeek();
     if (a === 'delvisit') {
@@ -875,10 +936,7 @@ html.d .peek { left: 30px; bottom: 38px; }
     }
     const towns = buildTowns();
     $('#town').insertAdjacentHTML('beforeend', towns.map(t => `<option value="${esc(t)}">${esc(title(t))}</option>`).join(''));
-    const counts = {};
-    S.stores.forEach(s => { counts[typeOf(s)] = (counts[typeOf(s)] || 0) + 1; });
-    $('#type').insertAdjacentHTML('beforeend', TYPES.map(([t]) => t).filter(t => counts[t]).map(t => `<option value="${esc(t)}">${esc(t)} (${counts[t]})</option>`).join(''));
-    if (S.type && !counts[S.type]) S.type = '';
+    renderTypeOptions();
     if (S.town && !towns.includes(S.town)) S.town = '';
     renderAll();
     connectDb();
